@@ -1,0 +1,1849 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+:root{
+    --green:#27ae60;
+    --black:#192a56;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --dark-red:#dc2626;
+}
+
+
+
+*{
+    font-family: 'Nunito' , sans-serif;
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+html{
+    font-size: 62.5%;
+    overflow-x:hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+section{
+    padding: 2rem 9%;
+}
+section:nth-child(even){
+    background: #eee;
+}
+
+
+.sub-heading{
+    text-align: center;
+    color: var(--green);
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+.heading{
+    text-align: center;
+    color: var(--black);
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    text-transform: capitalize;
+}
+
+
+
+/* //dishes btn  */
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    background: var(--black);
+    font-size:1.7rem;
+    color: #fff;
+    border-radius: .5rem;
+    padding: .8rem 3rem;
+}
+.btn:hover{
+    background: var(--green);
+    letter-spacing: .1rem ;
+}
+
+
+
+
+header{
+    position: fixed;
+    top: 0;left: 0;right: 0;
+    background: #fff;
+    padding: 2rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+header .logo {
+    color: var(--black);
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+header .logo i{
+    color: var(--green);
+}
+
+/*its the css of header nav like home ordr etc*/
+header .navbar a{
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    color: var(--light-color);
+
+}
+
+header .navbar a.active,
+header .navbar a:hover{
+    color: #fff;
+    background: var(--green);
+}
+header .icons i.fas.fa-bars {
+    display: none;
+}
+
+header .icons i.fas.fa-search,
+header .icons a {
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    width: 2.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--black);
+    border-radius: 50%;
+    background: #eee;
+}
+header .icons i.fas.fa-search:hover,
+header .icons a:hover{
+    color: #fff;
+    background:var(--green);
+    transform: rotate(360deg);
+    animation: alternate;
+}
+
+header .icons .menu-bars{
+    display: none;
+}
+
+#search-form {
+    position: fixed;
+    top: -110%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1004;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    transition: top 0.3s ease-in-out; /* Smooth transition */
+}
+
+#search-form.active {
+    top: 0;
+}
+
+#search-form #search-box {
+    width: 50rem;
+    border-bottom: 0.1rem solid #fff;
+    padding: 1rem 0;
+    font-size: 3rem;
+    text-transform: none;
+    background: none;
+}
+
+#search-form #search-box::placeholder{
+    color: #eee;
+}
+
+#search-form #search-box::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+
+#search-form label{
+    color: #fff;
+    cursor: pointer;
+    font-size: 3rem;
+}
+
+#search-form label:hover{
+    color: var(--green);
+}
+
+
+/* for the search close icon */
+#search-form #close {
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+    top: 2rem;right: 3rem;
+    font-size: 5rem;
+}
+
+
+/* main body section */
+
+.home .home-slider .slide {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 9rem;
+    justify-content: space-between; /* Add to manage horizontal spacing */
+}
+
+.home .home-slider .slide.content {
+    flex: 1 1 45rem;
+}
+
+.home .home-slider .slide .image {
+    flex: 1 1 45rem;
+    display: flex;
+    justify-content: center; /* Ensure image is centered inside container */
+}
+
+.home .home-slider .slide .image img {
+    max-width: 100%; /* Prevent stretching */
+    object-fit: cover; /* Make sure image doesn't get distorted */
+}
+
+.home .home-slider .slide .content span {
+    color: var(--green);
+    font-size: 2.5rem;
+}
+
+.home .home-slider .slide .content h3 {
+    color: var(--black);
+    font-size: 7rem;
+}
+
+.home .home-slider .slide .content p {
+    color: var(--light-color);
+    padding: .5rem 0;
+    line-height: 2rem;
+    font-size: 16px;
+
+}
+
+.swiper-pagination-buller-active{
+    background: var(--green);
+}
+
+/*ivided th menu dishes into columns*/
+/* Dish Grid Layout */
+.dishes .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr)); /* Adjusts grid columns based on the container size */
+    gap: 1.5rem; /* Slightly larger gap between boxes */
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+/* Dish Box Styling */
+.dishes .box-container .box {
+    padding: 2rem; /* Consistent spacing */
+    background: #fff;
+    border-radius: 1.25rem; /* Softer rounded corners */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for better depth */
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+/* Hover Effect for Dish Box */
+.dishes .box-container .box:hover {
+    transform: translateY(-8px); /* Adds a lift effect with more emphasis */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Darker shadow for hover effect */
+}
+
+.dishes .box-container .box .fa-heart,
+.dishes .box-container .box .fa-eye {
+    position: absolute;
+    top: 1.5rem;
+    background: #eee;
+    border-radius: 50%;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 2rem;
+    color: var(--black);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease, left 0.3s ease, right 0.3s ease;
+}
+
+.dishes .box-container .box .fa-heart,
+.dishes .box-container .box .fa-eye {
+    opacity: 0; /* Make the icons invisible */
+    position: absolute;
+    transition: all 0.3s ease; /* Smooth transition for position and opacity */
+}
+
+.dishes .box-container .box .fa-heart {
+    left: -15rem; /* Default position for the heart icon */
+}
+
+.dishes .box-container .box .fa-eye {
+    right: -15rem; /* Default position for the eye icon */
+}
+
+
+.dishes .box-container .box:hover .fa-heart {
+    opacity: 1; /* Make the heart icon visible */
+    left: 1.5rem; /* Position the heart on the left */
+}
+
+.dishes .box-container .box:hover .fa-eye {
+    opacity: 1; /* Make the eye icon visible */
+    right: 1.5rem; /* Position the eye on the right */
+}
+
+
+
+.dishes .box-container .box img {
+    height: 17rem;
+    margin: 1rem 0;
+}
+
+.stars {
+    display: flex; /* Align stars in a row */
+    gap: 0.2rem; /* Space between stars */
+    align-items: center; /* Vertically center the stars */
+    justify-content: center; /* Horizontally center the stars */
+    text-align: center; /* Ensures text inside is centered */
+}
+
+/* Style for all stars */
+.fa-star {
+    color: #ddd; /* Default gray color for empty stars */
+    font-size: 1.5rem; /* Size of the stars */
+}
+
+/* Style for checked (filled) stars */
+.fa-star.checked {
+    color: #ff9900; /* Gold color for filled stars */
+}
+
+/* Optional: Hover effect on stars */
+.stars .fa-star:hover {
+    color: #ffd700; /* Lighter gold on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+    transition: transform 0.2s, color 0.2s; /* Smooth transition */
+}
+
+/* Optional: Button Styling */
+.dish-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background: var(--black);
+    color: #fff;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.dish-btn:hover {
+    background-color: #e68900; /* Darker button color on hover */
+    letter-spacing: .1rem; /* Slight increase in letter spacing */
+}
+
+.dishes .box-container .box span.currency-css{
+    color: var(--green);
+    font-weight: bolder;
+    margin-right: 1rem;
+    font-size: 2rem;
+}
+
+/* about section ********************************************************************************************************** */
+
+.about .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.about .row .image{
+    flex: 1 1 45rem;
+    margin-bottom: 2rem; /* Reduced margin to decrease the gap */
+}
+
+.about .row .image img{
+    width: 100%;
+    border-radius: 10%;
+    margin-right: 10px;
+}
+
+.about .row .content{
+    flex: 1 1 45rem;
+    margin-bottom: 2rem; /* Reduced margin to decrease the gap */
+}
+
+.about .row .content h3 {
+    color: var(--black);
+    font-size: 4rem;
+    padding: 3rem 0; /* Reduced padding to decrease the gap */
+    letter-spacing: -1px;
+}
+
+.about .row .content p {
+    color: var(--light-color);
+    font-size: 1.5rem;
+    padding: 1rem 0; /* Reduced padding to decrease the gap */
+    line-height: 2;
+    letter-spacing: -0.5px;
+}
+
+.about .row .content .icons-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    margin-top: .5rem;
+}
+
+.about .row .content .icons-container .icons {
+    background: #eee;
+    border-radius: .5rem;
+    border: .1rem solid rgba(0, 0, 0, .2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex: 1 1 17rem;
+    padding: 1.5rem 1rem;
+}
+
+.about .row .content .icons-container .icons i {
+    font-size: 2.5rem;
+    color: var(--green);
+}
+
+.about .row .content .icons-container .icons span {
+    font-size: 1.5rem;
+    color: var(--black);
+}
+
+/* **************************************************************************************************************************************
+ Menu css*/ /*in menu.html*/
+/* Hide the search form initially */
+/* menu section search bar css */
+#search-form {
+    position: fixed;
+    top: -110%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1004;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    transition: top 0.3s ease-in-out; /* Smooth transition */
+}
+
+#search-form.active {
+    top: 0;
+}
+
+#search-form #search-box {
+    width: 50rem;
+    border-bottom: 0.1rem solid #fff;
+    padding: 1rem 0;
+    font-size: 3rem;
+    text-transform: none;
+    background: none;
+}
+
+#search-form #search-box::placeholder{
+    color: #eee;
+}
+
+#search-form #search-box::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+
+#search-form label{
+    color: #fff;
+    cursor: pointer;
+    font-size: 3rem;
+}
+
+#search-form label:hover{
+    color: var(--green);
+}
+
+
+/* for the search close icon */
+#search-form #close {
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+    top: 2rem;right: 3rem;
+    font-size: 5rem;
+}
+
+/* menu heading  */
+/* Sub-heading */
+/* Sub-heading */
+.sub-heading-menu {
+    font-family: "Macondo", serif;
+    color: var(--black);
+
+    font-size:10rem;
+    margin-top: 52px;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 8rem;
+    padding-top: 1rem;
+    position: relative;  /* Make sure it's above the image */
+    z-index: 2; /* Ensure the sub-heading is above the image */
+}
+
+/* Main heading */
+.heading-menu {
+    font-family:'Macondo';
+    text-align: center;
+    color: #f9f9f9;
+    font-size:10rem;
+    padding-bottom: 2rem;
+    text-transform: capitalize;
+    position: relative; /* Make sure it's above the image */
+    z-index: 2; /* Ensure the heading is above the image */
+}
+
+/* Main menu section container */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    position: relative; /* Make sure the image is positioned relative to the container */
+}
+
+/* Box containing the image */
+.img-box {
+    position: relative;  /* Ensure it is positioned relative to its container */
+    max-width: 100%;
+    height: 500px;  /* Increase height to make the image larger */
+    width: 100%;  /* Image should cover full width of the container */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Image inside the img-box */
+.img-box img {
+    position: absolute; /* Make the image position absolute inside the box */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Make the image cover the entire box */
+    object-fit: cover; /* Ensure the image covers the box */
+    z-index: 1; /* Place the image behind the text */
+}
+
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Container Layout */
+  .container {
+    display: flex; /* Display as flexbox */
+    height: 100vh; /* Full viewport height */
+    transition: all 0.3s ease;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 25%; /* Sidebar takes up 25% of the width */
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    overflow-y: auto; /* Scrollable if content overflows */
+    transition: all 0.3s ease;
+    display: block; /* Make sure sidebar is visible by default */
+}
+
+/* Sidebar is hidden by default on small screens */
+.sidebar.hidden {
+    display: none;
+}
+
+/* Sidebar menu list */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+  
+ /* Style the menu items */
+.menu-item {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect */
+  .menu-item:hover {
+    background-color: #f0f0f0; /* You can choose a different color */
+    color: #007BFF; /* Color on hover */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  
+  /* Main Content */
+  .main-content {
+    width: 75%; /* Main content takes up the rest */
+    padding: 20px;
+    overflow-y: auto; /* Scrollable if content overflows */
+  }
+  .main-content .mini{
+    background: #eee;
+  }
+  .meal-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .meal-box img {
+    width: 140px;
+    height: 120px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+
+  .main-content h3{
+    font-family: 'sans';
+    font-size: 2.5rem;
+  }
+  
+.items-details h4{
+    font-size: 2rem;
+}
+  .details {
+    padding: 10px;
+  }
+  
+  .details h3 {
+    margin: 0 0 5px 0;
+    font-size: 20px;
+    font: bold;
+  }
+  
+  .details p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #555;
+  }
+
+.rating {
+    background: var(--green);
+    color: white;
+    padding: 2px 4px 2px 4px;
+    font-size: 1.4rem;
+    border-radius: 5px;
+
+    position: absolute;
+    top: 10px;     /* Adjust as needed */
+    right: 10px;   /* Adjust as needed */
+    z-index: 1000; /* Ensure it appears above other content inside .meal-box */
+}
+
+  
+.dish-count1,
+.dish-count2{
+    display: inline-block;
+}
+
+/* Style for the "Order" button */
+.menu-order-btn {
+    background-color: #FF6347; /* Tomato color for the button */
+    color: white; /* White text color */
+    padding: 10px 22px; /* Padding for the button */
+    border: none; /* Remove the default border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px; /* Text size */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition on hover */
+    display: inline-block;
+    text-align: center;
+
+    position: absolute;
+    bottom: 10px;     /* Adjust as needed */
+    right: 10px;   /* Adjust as needed */
+    z-index: 1000;
+}
+
+/* Hover effect for the "Order" button */
+.menu-order-btn:hover {
+    background-color: #FF4500; /* Darker shade of red on hover */
+    transform: translateY(-2px); /* Slightly raise the button */
+}
+
+/* Active state for the "Order" button (when clicked) */
+.menu-order-btn:active {
+    transform: translateY(1px); /* Button appears pressed down */
+}
+
+/* Focus state for accessibility */
+.menu-order-btn:focus {
+    outline: none; /* Remove the outline when focused */
+    box-shadow: 0 0 0 3px rgba(255, 99, 71, 0.5); /* Add a subtle shadow */
+}
+
+
+
+
+
+
+
+
+  /* Dropdown Button */
+.dropdown-btn {
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.6rem;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+/* Text inside the button */
+.sidebar-main-txt-css {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+/* Hover effect on button */
+.dropdown-btn:hover {
+    background-color: #f1f1f1;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none; /* Initially hidden */
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    margin-top: 8px;
+    border-radius: 5px;
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect on dropdown links */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Button inside dropdown (for Veg/Non-veg) */
+.dropdown-content a button {
+    border: none;
+    background-color: transparent;
+    color: #333;
+    cursor: pointer;
+    padding-left: 5px;
+}
+
+/* Hover effect on dropdown button */
+.dropdown-content a button:hover {
+    color: var(--green); /* Change color on hover */
+}
+
+/* Show dropdown when active */
+#dropdownBtn.active + #dropdownMenu {
+    display: block;
+}
+/* ****************************************************************************************************
+review */
+#search-form {
+    position: fixed;
+    top: -110%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1004;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    transition: top 0.3s ease-in-out; /* Smooth transition */
+}
+
+#search-form.active {
+    top: 0;
+}
+
+#search-form #search-box {
+    width: 50rem;
+    border-bottom: 0.1rem solid #fff;
+    padding: 1rem 0;
+    font-size: 3rem;
+    text-transform: none;
+    background: none;
+}
+
+#search-form #search-box::placeholder{
+    color: #eee;
+}
+
+#search-form #search-box::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+
+#search-form label{
+    color: #fff;
+    cursor: pointer;
+    font-size: 3rem;
+}
+
+#search-form label:hover{
+    color: var(--green);
+}
+
+
+/* for the search close icon */
+#search-form #close {
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+    top: 2rem;right: 3rem;
+    font-size: 5rem;
+}
+
+/* //////review heading  */
+/* Style for the heading container */
+.heading-container {
+    text-align: center; /* Center the text */
+    margin-bottom: 40px; 
+    margin-top: 55px;/* Space below the heading container */
+}
+
+/* Style for the sub-heading (Reviews) */
+.sub-heading-review {
+    font-size: 24px; /* Medium font size */
+    color: #555; /* Dark grey color for sub-heading */
+    font-weight: normal; /* Normal weight */
+    margin-bottom: 10px; /* Space below the sub-heading */
+}
+
+/* Style for the main heading (What Customers say?) */
+.heading-review {
+    font-size: 32px; /* Larger font size for the main heading */
+    font-weight: bold; /* Bold text */
+    color: #333; /* Darker color for emphasis */
+    letter-spacing: 1px; /* Slight spacing between letters */
+}
+/* review nav bar  */
+.review_nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review_nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+.review_nav a:hover {
+    color: #ff9800;
+    transform: scale(1.1);
+}
+
+.review_nav a p {
+    margin-left: 6px;
+    font-size: 20px;
+    color: #ff9800;
+    transition: transform 0.3s ease;
+}
+
+.review_nav a:hover p {
+    transform: scale(1.2);
+}
+
+.review_nav a:not(:last-child) {
+    margin-right: 15px;
+}
+.progress-container {
+    display: inline-block;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.progress-container label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: inline-block;
+    color: #333;
+}
+
+progress {
+    width: 100%;
+    height: 20px;
+    appearance: none;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #4caf50;
+    border-radius: 8px;
+}
+
+progress::-moz-progress-bar {
+    background-color: #4caf50;
+    border-radius: 8px;
+}
+
+progress:focus {
+    outline: none;
+}
+
+progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+progress[value]::-webkit-progress-value {
+    background-color: #4caf50;
+}
+
+.review-img-container {
+    display: inline-block;
+    justify-content: center;
+    height: 420px; /* Updated height for image container */
+    width: 720px; /* Updated width for image container */
+    
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.review-img-container img {
+    padding-top: 20px;
+   height: 420px; /* Updated height for image container */
+    width: 720px;  /* Image will fill the container height */
+    object-fit: cover; /* Ensures the image covers the container while maintaining the aspect ratio */
+    border-radius: 8px;
+}
+/* ///customers rating css  */
+/* Scoped styling for the review section */
+.star-one,
+.star-two,
+.star-three,
+.star-four,
+.star-five {
+    padding: 30px 0;
+    background-color: #fff; /* Light background to distinguish from page */
+    font-family: Arial, sans-serif;
+}
+
+/* Styling for the review slider container */
+.star-one .review-slider,
+.star-two .review-slider,
+.star-three .review-slider,
+.star-four .review-slider,
+.star-five .review-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+}
+
+/* Individual review card */
+.star-one .slide,
+.star-two .slide,
+.star-three .slide,
+.star-four .slide,
+.star-five .slide {
+    background-color: #fafafa; /* Light gray background for reviews */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 280px;  /* Adjusted width for better fitting */
+    min-height: 240px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for the review card */
+.star-one .slide:hover,
+.star-two .slide:hover,
+.star-three .slide:hover,
+.star-four .slide:hover,
+.star-five .slide:hover {
+    transform: scale(1.05);
+}
+
+/* User profile styling */
+.star-one .user,
+.star-two .user,
+.star-three .user,
+.star-four .user,
+.star-five .user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.star-one .user img,
+.star-two .user img,
+.star-three .user img,
+.star-four .user img,
+.star-five .user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+/* User info (name) styling */
+.star-one  .user-info h3,
+.star-two  .user-info h3,
+.star-three  .user-info h3,
+.star-four .user-info h3,
+.star-five .user-info h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Customer rating styling */
+.star-one .customer-rating,
+.star-two .customer-rating,
+.star-three .customer-rating,
+.star-four .customer-rating,
+.star-five .customer-rating {
+    font-size: 18px;
+    color: #f39c12; /* Gold color for the rating */
+    display: flex;
+    align-items: center;
+    gap: 5px;  /* Space between the rating number and the star icon */
+}
+
+
+.star-one .customer-rating p,
+.star-two .customer-rating p,
+.star-three .customer-rating p,
+.star-four .customer-rating p,
+.star-five .customer-rating p {
+    font-size: 20px;  /* Adjust size for the star icon */
+    color: #f39c12;  /* Gold color for the star */
+    margin: 0;  /* Remove any default margin */
+}
+
+.star-one .customer-rating .fas.fa-star-half-alt ,
+.star-two .customer-rating .fas.fa-star-half-alt ,
+.star-three .customer-rating .fas.fa-star-half-alt ,
+.star-four .customer-rating .fas.fa-star-half-alt ,
+.star-five .customer-rating .fas.fa-star-half-alt {
+    font-size: 18px;  /* Adjusts the size of the star */
+    color: #f39c12;  /* Gold color for the star */
+    display: inline-block;
+    vertical-align: middle;  /* Aligns the icon vertically with the text */
+    margin-left: 5px;  /* Small space between the rating number and the star */
+}
+
+/* Optional: Style the icon for different rating thresholds */
+.star-one .customer-rating .fas.fa-star-half-alt.low-rating ,
+.star-two .customer-rating .fas.fa-star-half-alt.low-rating ,
+.star-three .customer-rating .fas.fa-star-half-alt.low-rating ,
+.star-four .customer-rating .fas.fa-star-half-alt.low-rating ,
+.star-five .customer-rating .fas.fa-star-half-alt.low-rating {
+    color: #e74c3c;  /* Red color for low ratings */
+}
+
+/* Review text styling */
+.star-one .slide p,
+.star-two .slide p,
+.star-three .slide p,
+.star-four .slide p,
+.star-five .slide p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 15px;
+    text-align: justify;
+}
+/* order section  */
+
+#search-form {
+    position: fixed;
+    top: -110%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1004;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    transition: top 0.3s ease-in-out; /* Smooth transition */
+}
+
+#search-form.active {
+    top: 0;
+}
+
+#search-form #search-box {
+    width: 50rem;
+    border-bottom: 0.1rem solid #fff;
+    padding: 1rem 0;
+    font-size: 3rem;
+    text-transform: none;
+    background: none;
+}
+
+#search-form #search-box::placeholder{
+    color: #eee;
+}
+
+#search-form #search-box::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+
+#search-form label{
+    color: #fff;
+    cursor: pointer;
+    font-size: 3rem;
+}
+
+#search-form label:hover{
+    color: var(--green);
+}
+
+.sub-heading{
+    text-align: center;
+    color: var(--green);
+    font-size: 2rem;
+    padding-top: 3rem;
+}
+.heading{
+    text-align: center;
+    color: var(--black);
+    font-size: 3rem;
+    padding-bottom: 3rem;
+    text-transform: capitalize;
+}
+/* for the search close icon */
+#search-form #close {
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+    top: 2rem;right: 3rem;
+    font-size: 5rem;
+}
+.order {
+    padding: 50px 10%;
+    background-color: #f9f9f9; /* Light background color */
+    text-align: center;
+}
+
+.order .sub-heading {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.order .heading {
+    font-size: 36px;
+    font-weight: bold;
+    color: #f39c12; /* Gold color for heading */
+    margin-bottom: 30px;
+}
+
+/* Form container */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.inputBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.input {
+    flex: 1;
+    min-width: 250px; /* Ensures inputs are not too narrow */
+    display: flex;
+    flex-direction: column;
+}
+
+.input span {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input input,
+.input textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+}
+
+.input input:focus,
+.input textarea:focus {
+    border-color: #f39c12; /* Gold color when focused */
+    outline: none;
+}
+
+/* Textarea styling */
+textarea {
+    resize: vertical;
+    height: 150px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Button Styling */
+.check-order-btn {
+    background-color: #f39c12;
+    color: white;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px;
+    margin-top: 20px;
+}
+
+.check-order-btn:hover {
+    background-color: #e67e22; /* Darker gold on hover */
+}
+
+/* footer css  */
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1rem));
+    gap: 1.5rem;
+}
+
+.footer .box-container .box h3{
+    padding: .5rem 0;
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.footer .box-container .box a{
+    display: block;
+    padding: .5rem 0;
+    font-size: 1.5rem;
+    color: var(--light-color);
+}
+
+.footer .box-container .box a:hover{
+    color: var(--green);
+    text-decoration: underline;
+}
+
+.footer .credit{
+    text-align: center;
+    border-top: .1rem solid rgba(0, 0, 0, 0.1);
+    font-size: 2rem;
+    color: var(--black);
+    padding: .5rem;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+
+}
+
+
+/* .loader-container {
+    display: flex;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loader-container img {
+    width: 10rem; 
+    height: auto; 
+}
+
+
+.loader-container .fade-out{
+    top: 110%;
+} */
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+/* media quries */
+@media(max-width:991px){
+
+
+    html{
+        font-size: 55%;
+    }
+    header{
+        padding: 1rem 2rem;
+    }
+    section{
+        padding: 2rem;
+    }
+    header .icons i.fas.fa-bars {
+        display: inline-block;  /* Make the hamburger menu visible on mobile */
+    }
+    header .icons i.fas.fa-bars {
+        cursor: pointer;
+        margin-left: .5rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        width: 2.5rem;
+        text-align: center;
+        font-size: 1.5rem;
+        color: var(--black);
+        border-radius: 50%;
+        background: #eee;
+    }
+
+    .sidebar {
+        display: block; /* Sidebar is visible on larger screens */
+    }
+
+    .main-content {
+        width: 75%; /* Main content takes 75% width */
+    }
+
+    .hamburger-menu {
+        display: none; /* Hide the hamburger on large screens */
+    }
+    .details {
+        padding: 12px; /* Slightly increased padding for medium screens */
+    }
+
+    .details h3 {
+        font-size: 18px; /* Reduced font size for better fit */
+    }
+
+    .details p {
+        font-size: 15px; /* Adjusted font size for better readability */
+    }
+     
+
+    .menu-order-btn {
+        padding: 10px 22px; /* Default padding for medium screens */
+        font-size: 16px; /* Default font size for medium screens */
+    }
+
+    .progress-container {
+        max-width: 90%;
+        margin: 20px;
+        right: 0;
+    }
+
+    .progress-container label {
+        font-size: 14px;
+    }
+
+    progress {
+        height: 18px;
+    }
+
+    .review-img-container {
+        margin: 15px 0;
+    }
+
+    .review-img-container img {
+        max-width: 90%;
+    }
+    .review-img-container {
+        height: 350px; /* Reduced height for smaller screens */
+        width: 90%; /* Make the container more fluid, take up 90% of the parent container */
+        margin: 0 auto; /* Center the container */
+    }
+
+    .review-img-container img {
+        height: 350px; /* Image height to match the container */
+        width: 100%;  /* Image width will now fill the container */
+    }
+
+    .star-one .slide,
+    .star-two .slide,
+    .star-three .slide,
+    .star-four .slide,
+    .star-five .slide {
+        width: 90%;  /* Adjust the width of review cards */
+        margin: 10px auto;  /* Center the review cards */
+    }
+
+    .star-one .user img,
+    .star-two .user img,
+    .star-three .user img,
+    .star-four .user img,
+    .star-five .user img {
+        width: 45px;  /* Slightly smaller images on tablet */
+        height: 45px;
+    }
+
+    .star-one .customer-rating,
+    .star-two .customer-rating,
+    .star-three .customer-rating,
+    .star-four .customer-rating,
+    .star-five .customer-rating {
+        font-size: 16px;  /* Slightly smaller rating text */
+    }
+
+    .star-one .customer-rating p,
+    .star-two .customer-rating p,
+    .star-three .customer-rating p,
+    .star-four .customer-rating p,
+    .star-five .customer-rating p {
+        font-size: 18px;  /* Smaller stars on smaller screens */
+    }
+    .order {
+        padding: 50px 5%;
+    }
+
+    .inputBox {
+        gap: 10px;
+    }
+
+    .input {
+        min-width: 45%;
+    }
+
+    .check-order-btn {
+        width: 180px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+}
+
+
+@media (max-width: 768px) {
+
+    /* Style for the menu icon (hamburger) */
+    header .icons i.fas.fa-bars {
+        cursor: pointer;
+        margin-left: .5rem;
+        height: 2.5rem;
+        line-height: 2.5rem;    
+        width: 2.5rem;
+        text-align: center;
+        font-size: 1.5rem;
+        color: var(--black);
+        border-radius: 50%;
+        background: #eee;
+    }
+
+    /* Navbar initially hidden (clip-path starts with no visible area) */
+    header .navbar {
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: #fff;
+        border-bottom: .1rem solid rgba(0, 0, 0, .2);
+        padding: 1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Initially hidden */
+        transition: clip-path 0.3s ease-in-out; /* Smooth transition for clip-path */
+    }
+
+    /* Navbar shown when the .active class is added */
+    header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Fully visible */
+    }
+
+    /* Navbar links style */
+    header .navbar a {
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem;
+        font-size: 1rem;
+        background: #eee;
+        text-decoration: none;
+        color: #333;
+    }
+    #search-form #search-box{
+        width: 90%;
+        margin: 0 1 rem;
+    }
+    .home .home-slider .slide .content h3 {
+        font-size: 5rem;
+    
+        .sidebar {
+            display: none; /* Hide sidebar on mobile */
+        }
+    
+        .main-content {
+            width: 100%; /* Main content takes full width */
+        }
+}
+
+
+
+.container {
+    flex-direction: column; /* Stack the main content and sidebar */
+}
+
+/* Make the sidebar hidden initially on small screens */
+.sidebar {
+    display: none; /* Hide sidebar on mobile by default */
+}
+
+/* When sidebar is visible (toggle state), display it */
+.sidebar.active {
+    display: block; /* Show sidebar when active */
+}
+
+.main-content {
+    width: 100%; /* Main content takes full width */
+}
+
+/* Optional: Style the hamburger menu button */
+.hamburger-menu {
+    display: block; /* Make hamburger visible */
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    color: #333;
+}
+.details {
+    padding: 15px; /* Increased padding for better spacing on small screens */
+}
+
+.details h3 {
+    font-size: 16px; /* Smaller font size for small screens */
+}
+
+.details p {
+    font-size: 13px; /* Smaller text size for smaller screens */
+    margin: 3px 0; /* Reduced margin for better layout */
+}
+
+.menu-order-btn {
+    padding: 3px 18px; /* Smaller padding for smaller screens */
+    font-size: 14px; /* Smaller font size for smaller screens */
+    bottom: 8px;     /* Adjust vertical position */
+    right: 8px;      /* Adjust horizontal position */
+}
+
+.progress-container {
+    max-width: 100%;
+    margin: 15px;
+    padding: 15px;
+    right: 0;
+}
+
+.progress-container label {
+    font-size: 12px;
+}
+
+progress {
+    height: 16px;
+}
+.review-img-container {
+    height: 250px; /* Reduced height further for mobile */
+    width: 100%; /* Full width for mobile */
+    margin: 0 auto; /* Center the container */
+}
+
+.review-img-container img {
+    height: 250px; /* Image height to match the container */
+    width: 100%;  /* Image width will now fill the container */
+}
+ 
+
+    .star-five .review-slider {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .star-one .slide,
+    .star-two .slide,
+    .star-three .slide,
+    .star-four .slide,
+    .star-five .slide {
+        width: 100%;  /* Full width for mobile */
+        margin: 10px 0;  /* More space between reviews */
+        min-height: 200px;  /* Reduce min-height on mobile */
+    }
+
+    .star-one .user img,
+    .star-two .user img,
+    .star-three .user img,
+    .star-four .user img,
+    .star-five .user img {
+        width: 40px;  /* Smaller profile images for mobile */
+        height: 40px;
+    }
+
+    .star-one .customer-rating,
+    .star-two .customer-rating,
+    .star-three .customer-rating,
+    .star-four .customer-rating,
+    .star-five .customer-rating {
+        font-size: 14px;  /* Smaller font size for the ratings */
+    }
+
+    .star-one .customer-rating p,
+    .star-two .customer-rating p,
+    .star-three .customer-rating p,
+    .star-four .customer-rating p,
+    .star-five .customer-rating p {
+        font-size: 16px;  /* Smaller star size for mobile */
+    }
+ 
+/* order section css  */
+/* Section styling */
+.order {
+    padding: 50px 10%;
+    background-color: #f9f9f9; /* Light background color */
+    text-align: center;
+}
+
+.order .sub-heading {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.order .heading {
+    font-size: 36px;
+    font-weight: bold;
+    color: #f39c12; /* Gold color for heading */
+    margin-bottom: 30px;
+}
+
+/* Form container */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.inputBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.input {
+    flex: 1;
+    min-width: 250px; /* Ensures inputs are not too narrow */
+    display: flex;
+    flex-direction: column;
+}
+
+.input span {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input input,
+.input textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+}
+
+.input input:focus,
+.input textarea:focus {
+    border-color: #f39c12; /* Gold color when focused */
+    outline: none;
+}
+
+/* Textarea styling */
+textarea {
+    resize: vertical;
+    height: 150px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Button Styling */
+.check-order-btn {
+    background-color: #f39c12;
+    color: white;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px;
+    margin-top: 20px;
+}
+
+.check-order-btn:hover {
+    background-color: #e67e22; /* Darker gold on hover */
+}
+
+.order {
+    padding: 40px 5%;
+}
+
+.inputBox {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.input {
+    min-width: 80%;  /* Make inputs fill most of the screen width on mobile */
+}
+
+.check-order-btn {
+    width: 100%; /* Full width for the button on mobile */
+    padding: 15px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+@media(max-width:991px){
+
+
+    html{
+        font-size: 50%;
+    }
+    .dishes .box-container .box img {
+        height: auto;
+        width: 100%;
+    }
+}
+

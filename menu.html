@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Food Delivery</title>
+
+    <!-- Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Swiper CDN link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- External CSS for the page -->
+    <link rel="stylesheet" href="proj-css/front_page.css">
+
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <a href="index.html" class="logo">
+            <i class="fas fa-utensils"></i> resto.
+        </a>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="index.html#dishes">Dishes</a>
+            <a href="index.html#about">About</a>
+            <a href="menu.html">Menu</a> <!-- Link to the Menu page -->
+            <a href="review.html">Review</a>
+            <a href="index.html#order">Order</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+        </div>
+    </header>
+
+    <!-- Search Form -->
+    <form action="" id="search-form">
+        <input type="search" placeholder="Search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+
+        <!-- Menu Header -->
+        <div class="image-container">
+            <div class="img-box">
+                <h3 class="sub-heading-menu">Menu</h3>
+                <h1 class="heading-menu">Popular Dishes</h1>
+                <img src="images/main menu.png" alt="Popular Dishes">
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Sidebar Section -->
+            <aside class="sidebar">
+                <nav class="navbar">
+                    <ul>
+                        <!-- Mini Thali -->
+                        <li>
+                            <button class="dropdown-btn" id="dropdownBtnMini">
+                                <a href="#mini" class="sidebar-main-txt-css">Mini Thali<p class="dish-count1">(2)</p></a>
+                            </button>
+                            <div class="dropdown-content" id="dropdownMenuMini">
+                                <a href="#veg1">Veg1</a>
+                                <a href="#Non-veg1">Non-veg1</a>
+                            </div>
+                        </li>
+
+                        <!-- Social Meals -->
+                        <li>
+                            <button class="dropdown-btn" id="dropdownBtnSocimeal">
+                                <a href="#socimeal" class="sidebar-main-txt-css">Social Meals <p class="dish-count2">(2)</p></a>
+                            </button>
+                            <div class="dropdown-content" id="dropdownMenuSocimeal">
+                                <a href="#">Veg2</a>
+                                <a href="#">Non-veg2</a>
+                            </div>
+                        </li>
+
+                        <!-- Other Menu Items -->
+                        <!-- Add other menu items here with the same structure -->
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Content Section -->
+            <main class="main-content">
+                <!-- Mini Thali Section -->
+                <section class="socimeal" id="socimeal">
+                    <h3 class="menu-dish-headings">Mini Thali</h3>
+                    <div class="items-details" id="veg">
+                        <h4>Veg</h4>
+                        <div class="meal-box">
+                            <img src="images/thali1-veg.jpg" alt="Toofani Paneer Meal Box">
+                            <div class="details">
+                                <h3>Toofani Paneer</h3>
+                                <p>₹380</p>
+                                <p>Toofani Paneer + Kachumber</p>
+                            </div>
+                            <div class="rating">4.5 <p class="fas fa-star-half-alt"></p></div>
+                            <button class="menu-order-btn">Order</button>
+                        </div>
+                    </div>
+
+                    <div class="items-details" id="Non-Veg">
+                        <h4>Non-veg</h4>
+                        <div class="meal-box">
+                            <img src="images/thali2-veg.jpg" alt="Toofani Paneer Meal Box">
+                            <div class="details">
+                                <h3>Toofani Paneer</h3>
+                                <p>₹380</p>
+                                <p>Toofani Paneer + Kachumber</p>
+                            </div>
+                            <div class="rating">4.5 <p class="fas fa-star-half-alt"></p></div>
+                            <button class="menu-order-btn">Order</button>
+                        </div>
+                    </div>
+                </section>
+                <!-- Social Meals Section -->
+                <section class="socimeal" id="socimeal">
+                    <h3 class="menu-dish-headings">Social Meals</h3>
+                    <div class="items-details" id="veg">
+                        <h4>Veg</h4>
+                        <div class="meal-box">
+                            <img src="images/chi.jpg" alt="Toofani Paneer Meal Box">
+                            <div class="details">
+                                <h3>Toofani Paneer</h3>
+                                <p>₹380</p>
+                                <p>Toofani Paneer + Kachumber</p>
+                            </div>
+                            <div class="rating">4.5 <p class="fas fa-star-half-alt"></p></div>
+                            <button class="menu-order-btn">Order</button>
+                        </div>
+                    </div>
+
+                    <div class="items-details" id="Non-Veg">
+                        <h4>Non-veg</h4>
+                        <div class="meal-box">
+                            <img src="images/dumplings2.png" alt="Toofani Paneer Meal Box">
+                            <div class="details">
+                                <h3>Toofani Paneer</h3>
+                                <p>₹380</p>
+                                <p>Toofani Paneer + Kachumber</p>
+                            </div>
+                            <div class="rating">4.5 <p class="fas fa-star-half-alt"></p></div>
+                            <button class="menu-order-btn">Order</button>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </section>
+
+
+
+    <!-- External JS Links -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="logic-js/front_page_logic.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Order - Food Delivery</title>
+    
+        <!-- Font Awesome CDN link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+        <!-- Swiper CDN link -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+        <!-- External CSS for the page -->
+        <link rel="stylesheet" href="proj-css/front_page.css">
+    
+    </head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <i class="fas fa-utensils"></i> resto.
+        </a>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="index.html#dishes">Dishes</a>
+            <a href="index.html#about">About</a>
+            <a href="menu.html">Menu</a> <!-- Link to the Menu page -->
+            <a href="review.html#review">Review</a>
+            <a href="index.html#order">Order</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+        </div>
+    </header>
+
+    <!-- Search Form -->
+    <form action="" id="search-form">
+        <input type="search" placeholder="Search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+
+
+
+
+ <!-- starting main reviw section    -->
+
+ <section class="review" id="review">
+
+    <!-- Menu Header -->
+    <div class="heading-container">
+            <h3 class="sub-heading-review">Reviews</h3><br>
+            <h1 class="heading-review">What Customers say?</h1>
+            </button>
+           
+    </div>
+    <nav class="review_nav">
+        <a href="#1">1<p class="fas fa-star"></p></a>
+        <a href="#2">2<p class="fas fa-star"></p></a>
+        <a href="#3">3<p class="fas fa-star"></p></a>
+        <a href="#4">4<p class="fas fa-star"></p></a>
+        <a href="#5">5<p class="fas fa-star"></p></a>
+    </nav>
+
+    <div class="progress-container">
+        <label for="progress-bar">1Rating</label>
+    <progress id="progress-bar" value="50" max="100"></progress>
+    <label for="progress-bar">2Rating</label>
+    <progress id="progress-bar" value="50" max="100"></progress>
+    <label for="progress-bar">3Rating</label>
+    <progress id="progress-bar" value="50" max="100"></progress>
+    <label for="progress-bar">4Rating</label>
+    <progress id="progress-bar" value="50" max="100"></progress>
+    <label for="progress-bar">5Rating</label>
+    <progress id="progress-bar" value="50" max="100"></progress>
+    </div>
+    <div class="review-img-container">
+        <img src="images/review.png" alt="">
+    </div>
+
+    <section class="star-five" id="5">
+        <div class="review-slider">
+            <div class="slide">
+                <div class="user">
+                    <img src="images/cus1.jpg" alt="Customer Image">
+                    <div class="user-info">
+                        <h3>John Deo</h3>
+                        <div class="customer-rating" id="5">
+                            4.6
+                            <p class="fas fa-star-half-alt"></p>
+                        </div>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, unde quidem! Doloremque quaerat reprehenderit voluptate? Aliquam atque quis saepe dolorum?</p>
+            </div>
+            <!-- cus 2  -->
+            <div class="slide">
+                <div class="user">
+                    <img src="images/cus1.jpg" alt="Customer Image">
+                    <div class="user-info">
+                        <h3>John Deo</h3>
+                        <div class="customer-rating" id="5">
+                            4.5
+                            <p class="fas fa-star-half-alt"></p>
+                        </div>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, unde quidem! Doloremque quaerat reprehenderit voluptate? Aliquam atque quis saepe dolorum?</p>
+            </div>
+        </div>
+    </section>
+    <!-- rating 4 -->
+    <section class="star-four" id="4">
+        <div class="review-slider">
+            <div class="slide">
+                <div class="user">
+                    <img src="images/cus1.jpg" alt="Customer Image">
+                    <div class="user-info">
+                        <h3>John Deo</h3>
+                        <div class="customer-rating" id="5">
+                            4
+                            <p class="fas fa-star-half-alt"></p>
+                        </div>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, unde quidem! Doloremque quaerat reprehenderit voluptate? Aliquam atque quis saepe dolorum?</p>
+            </div>
+            <div class="slide">
+                <div class="user">
+                    <img src="images/cus1.jpg" alt="Customer Image">
+                    <div class="user-info">
+                        <h3>John Deo</h3>
+                        <div class="customer-rating" id="5">
+                            4
+                            <p class="fas fa-star-half-alt"></p>
+                        </div>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, unde quidem! Doloremque quaerat reprehenderit voluptate? Aliquam atque quis saepe dolorum?</p>
+            </div>
+        </div>
+    </section>
+ <!-- rating 3 -->
+    <section class="star-three" id="3">
+        <div class="review-slider">
+            <div class="slide">
+                <div class="user">
+                    <img src="images/cus1.jpg" alt="Customer Image">
+                    <div class="user-info">
+                        <h3>John Deo</h3>
+                        <div class="customer-rating" id="5">
+                            3.6
+                            <p class="fas fa-star-half-alt"></p>
+                        </div>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, unde quidem! Doloremque quaerat reprehenderit voluptate? Aliquam atque quis saepe dolorum?</p>
+            </div>
+            <div class="slide">
+                <div class="user">
+                    <img src="images/cus1.jpg" alt="Customer Image">
+                    <div class="user-info">
+                        <h3>John Deo</h3>
+                        <div class="customer-rating" id="5">
+                            3.4
+                            <p class="fas fa-star-half-alt"></p>
+                        </div>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, unde quidem! Doloremque quaerat reprehenderit voluptate? Aliquam atque quis saepe dolorum?</p>
+            </div>
+        </div>
+    </section>
+<!-- rating 2 -->
+    <section class="star-two" id="2">
+        <div class="review-slider">
+            <div class="slide">
+                <div class="user">
+                    <img src="images/cus1.jpg" alt="Customer Image">
+                    <div class="user-info">
+                        <h3>John Deo</h3>
+                        <div class="customer-rating" id="5">
+                            2.4
+                            <p class="fas fa-star-half-alt"></p>
+                        </div>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, unde quidem! Doloremque quaerat reprehenderit voluptate? Aliquam atque quis saepe dolorum?</p>
+            </div>
+            <div class="slide">
+                <div class="user">
+                    <img src="images/cus1.jpg" alt="Customer Image">
+                    <div class="user-info">
+                        <h3>John Deo</h3>
+                        <div class="customer-rating" id="5">
+                            2.7
+                            <p class="fas fa-star-half-alt"></p>
+                        </div>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, unde quidem! Doloremque quaerat reprehenderit voluptate? Aliquam atque quis saepe dolorum?</p>
+            </div>
+        </div>
+    </section>
+    <!-- rating 1 -->
+    <section class="star-one" id="1">
+        <div class="review-slider">
+            <div class="slide">
+                <div class="user">
+                    <img src="images/cus1.jpg" alt="Customer Image">
+                    <div class="user-info">
+                        <h3>John Deo</h3>
+                        <div class="customer-rating" id="5">
+                            1.5
+                            <p class="fas fa-star-half-alt"></p>
+                        </div>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, unde quidem! Doloremque quaerat reprehenderit voluptate? Aliquam atque quis saepe dolorum?</p>
+            </div>
+            <div class="slide">
+                <div class="user">
+                    <img src="images/cus1.jpg" alt="Customer Image">
+                    <div class="user-info">
+                        <h3>John Deo</h3>
+                        <div class="customer-rating" id="5">
+                            1.7
+                            <p class="fas fa-star-half-alt"></p>
+                        </div>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, unde quidem! Doloremque quaerat reprehenderit voluptate? Aliquam atque quis saepe dolorum?</p>
+            </div>
+        </div>
+    </section>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- External JS Links -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="logic-js/front_page_logic.js"></script>
+
+</body>
+</html>

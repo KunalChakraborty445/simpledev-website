@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menu - Food Delivery</title>
+    
+        <!-- Font Awesome CDN link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+        <!-- Swiper CDN link -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+        <!-- External CSS for the page -->
+        <link rel="stylesheet" href="proj-css/front_page.css">
+    
+    </head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <i class="fas fa-utensils"></i> resto.
+        </a>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="index.html#dishes">Dishes</a>
+            <a href="index.html#about">About</a>
+            <a href="menu.html">Menu</a> <!-- Link to the Menu page -->
+            <a href="review.html">Review</a>
+            <a href="order.html">Order</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+        </div>
+    </header>
+
+    <!-- Search Form -->
+    <form action="" id="search-form">
+        <input type="search" placeholder="Search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+    
+    <section class="order" id="order">
+        <h3 class="sub-heading">Order Now</h3>
+        <h1 class="heading">fast and free delivery</h1>
+    
+        <form action="">
+            <div class="inputBox">
+                <div class="input">
+                    <span>your name</span>
+                    <input type="text" placeholder="enter your name">
+                </div>
+                <div class="input">
+                    <span>Email</span>
+                    <input type="text" placeholder="enter your email">
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>Your order</span>
+                    <div><input type="text" placeholder="Enter your order"></div>
+                </div>
+                <div class="input">
+                    <span>additional food</span>
+                    <input type="test" placeholder="Write here">
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>No. of Orders</span>
+                    <input type="number" placeholder="Enter Quantity here...">
+                </div>
+                <div class="input">
+                    <span>Phone No.</span>
+                    <input type="number" placeholder="Enter phone number">
+                </div>
+                
+                <div class="input">
+                    <span>Date and Time</span>
+                    <input type="datetime-local" placeholder="Date">
+                </div>
+            </div>
+            <div class="input">
+                <span>Dine In</span>
+                <input type="radio" placeholder="Enter phone number">
+                <span>Take away</span>
+                <input type="radio" placeholder="Enter phone number">
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <span>your address</span>
+                    <textarea name="" placeholder="Enter your address" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="input">
+                    <span>your massage</span>
+                    <textarea name="" placeholder="Enter your massage" id="" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <input type="submit" value="order now" class="check-order-btn">
+        </form>
+    </section>
+    
+
+    <!-- footr section  -->
+
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="logic-js/front_page_logic.js"></script>
+</body>
+</html>
